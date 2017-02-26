@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Featured } from './components/layout';
+import store from './stores';
+import { Provider } from 'react-redux';
 
 const app = (
-
-		<div>
-			<Featured />
-		</div>
+		<Provider store={ store.configureStore() }>
+			<div>
+				<Featured />
+			</div>
+		</Provider>
 )
 
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Search } from '../view';
 import { APIManager } from '../../utils';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class Playlist extends Component {
 	searchPodcasts(e) {	
@@ -10,22 +12,11 @@ class Playlist extends Component {
 			return;
 		}
 
-		const searchTermEndPoint = `/search/${e.target.value}`;
+		const searchTerm = e.target.value;
+		console.log(this.props, "ouside apimanager")
 		
 		// search end point
-		APIManager
-			.get(searchTermEndPoint, null)
-			.then(res => {
-				console.log("Loading...");
-
-				return res;
-			})
-			.then(res => {
-				console.log(JSON.stringify(res));
-			})
-			.catch(err => {
-				alert(err.message);
-			});
+		this.props.podcastsReceived(searchTerm);
 		
 	} 
 
@@ -42,4 +33,17 @@ class Playlist extends Component {
 	}
 }
 
-export default Playlist;
+const mapStateToProps = (state) => {
+	return {
+		podcasts: state.podcasts
+	}
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		podcastsReceived: (podcasts) => dispatch(actions.podcastsReceived(podcasts))
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Playlist);
