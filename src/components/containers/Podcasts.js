@@ -1,59 +1,42 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class Podcasts extends Component {
 	render() {
+		const podcastList = this.props.podcasts.allPodcasts || [];
+
 		return (
 			<div>
-				<div className="shop-banner animated fadeinup delay-2">
-		            <a href="category.html">
-		            	<img src="img/banner2.jpg" alt="" />
-		            	<div className="opacity-overlay valign-wrapper">
-		            		<div className="valign center width-100">
-		                  		<h3 className="white-text">Podcasts</h3>
-		                  		<p className="white-text">Watches 2016</p>
-		                	</div>
-		              	</div>
-		            </a>
-		        </div>
 
-				<div className="shop-banner animated fadeinup delay-2">
-		            <a href="category.html">
-		            	<img src="img/banner2.jpg" alt="" />
-		            	<div className="opacity-overlay valign-wrapper">
-		            		<div className="valign center width-100">
-		                  		<h3 className="white-text">Podcasts</h3>
-		                  		<p className="white-text">Watches 2016</p>
-		                	</div>
-		              	</div>
-		            </a>
-		        </div>
+				{
+					podcastList.map(podcast => {
+						return (
 
-				<div className="shop-banner animated fadeinup delay-2">
-		            <a href="category.html">
-		            	<img src="img/banner2.jpg" alt="" />
-		            	<div className="opacity-overlay valign-wrapper">
-		            		<div className="valign center width-100">
-		                  		<h3 className="white-text">Podcasts</h3>
-		                  		<p className="white-text">Watches 2016</p>
-		                	</div>
-		              	</div>
-		            </a>
-		        </div>
+							<div key={podcast.trackId} className="shop-banner animated fadeinup delay-2">
+					            <a href="#">
+					            	<img src={podcast.artworkUrl600} alt="" />
+					            	<div className="opacity-overlay valign-wrapper">
+					            		<div className="valign center width-100">
+					                  		<h3 className="white-text">{podcast.artistName}</h3>
+					                  		<p className="white-text">{podcast.collectionCensoredName}</p>
+					                	</div>
+					              	</div>
+					            </a>
+					        </div>
+						)
+					})
+				}
 
-				<div className="shop-banner animated fadeinup delay-2">
-		            <a href="category.html">
-		            	<img src="img/banner2.jpg" alt="" />
-		            	<div className="opacity-overlay valign-wrapper">
-		            		<div className="valign center width-100">
-		                  		<h3 className="white-text">Podcasts</h3>
-		                  		<p className="white-text">Watches 2016</p>
-		                	</div>
-		              	</div>
-		            </a>
-		        </div>
 	        </div>
 		)
 	}
 }
 
-export default Podcasts;
+const mapStateToProps = (state) => {
+	return {
+		podcasts: state.podcasts
+	}
+}
+
+export default connect(mapStateToProps)(Podcasts);

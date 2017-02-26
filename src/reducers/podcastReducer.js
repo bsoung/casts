@@ -1,7 +1,7 @@
 import constants from '../constants';
 
 let initialState = {
-
+	allPodcasts: null
 }
 
 export default (state = initialState, action) => {
@@ -9,9 +9,10 @@ export default (state = initialState, action) => {
 
 	switch (action.type) {
 		case constants.PODCASTS_RECEIVED:
+			updated.allPodcasts = action.payload
 
-			console.log("PODCASTS_RECEIVED:", JSON.stringify(action.payload));
-			
+			console.log(updated);
+
 			return updated;
 
 		default:

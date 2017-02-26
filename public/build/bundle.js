@@ -21976,6 +21976,14 @@ var _react = __webpack_require__(81);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(214);
+
+var _actions = __webpack_require__(247);
+
+var actions = _interopRequireWildcard(_actions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21994,119 +22002,42 @@ var Podcasts = function (_Component) {
 	}
 
 	_createClass(Podcasts, [{
-		key: "render",
+		key: 'render',
 		value: function render() {
+			var podcastList = this.props.podcasts.allPodcasts || [];
+
 			return _react2.default.createElement(
-				"div",
+				'div',
 				null,
-				_react2.default.createElement(
-					"div",
-					{ className: "shop-banner animated fadeinup delay-2" },
-					_react2.default.createElement(
-						"a",
-						{ href: "category.html" },
-						_react2.default.createElement("img", { src: "img/banner2.jpg", alt: "" }),
+				podcastList.map(function (podcast) {
+					return _react2.default.createElement(
+						'div',
+						{ key: podcast.trackId, className: 'shop-banner animated fadeinup delay-2' },
 						_react2.default.createElement(
-							"div",
-							{ className: "opacity-overlay valign-wrapper" },
+							'a',
+							{ href: '#' },
+							_react2.default.createElement('img', { src: podcast.artworkUrl600, alt: '' }),
 							_react2.default.createElement(
-								"div",
-								{ className: "valign center width-100" },
+								'div',
+								{ className: 'opacity-overlay valign-wrapper' },
 								_react2.default.createElement(
-									"h3",
-									{ className: "white-text" },
-									"Podcasts"
-								),
-								_react2.default.createElement(
-									"p",
-									{ className: "white-text" },
-									"Watches 2016"
+									'div',
+									{ className: 'valign center width-100' },
+									_react2.default.createElement(
+										'h3',
+										{ className: 'white-text' },
+										podcast.artistName
+									),
+									_react2.default.createElement(
+										'p',
+										{ className: 'white-text' },
+										podcast.collectionCensoredName
+									)
 								)
 							)
 						)
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "shop-banner animated fadeinup delay-2" },
-					_react2.default.createElement(
-						"a",
-						{ href: "category.html" },
-						_react2.default.createElement("img", { src: "img/banner2.jpg", alt: "" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "opacity-overlay valign-wrapper" },
-							_react2.default.createElement(
-								"div",
-								{ className: "valign center width-100" },
-								_react2.default.createElement(
-									"h3",
-									{ className: "white-text" },
-									"Podcasts"
-								),
-								_react2.default.createElement(
-									"p",
-									{ className: "white-text" },
-									"Watches 2016"
-								)
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "shop-banner animated fadeinup delay-2" },
-					_react2.default.createElement(
-						"a",
-						{ href: "category.html" },
-						_react2.default.createElement("img", { src: "img/banner2.jpg", alt: "" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "opacity-overlay valign-wrapper" },
-							_react2.default.createElement(
-								"div",
-								{ className: "valign center width-100" },
-								_react2.default.createElement(
-									"h3",
-									{ className: "white-text" },
-									"Podcasts"
-								),
-								_react2.default.createElement(
-									"p",
-									{ className: "white-text" },
-									"Watches 2016"
-								)
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "shop-banner animated fadeinup delay-2" },
-					_react2.default.createElement(
-						"a",
-						{ href: "category.html" },
-						_react2.default.createElement("img", { src: "img/banner2.jpg", alt: "" }),
-						_react2.default.createElement(
-							"div",
-							{ className: "opacity-overlay valign-wrapper" },
-							_react2.default.createElement(
-								"div",
-								{ className: "valign center width-100" },
-								_react2.default.createElement(
-									"h3",
-									{ className: "white-text" },
-									"Podcasts"
-								),
-								_react2.default.createElement(
-									"p",
-									{ className: "white-text" },
-									"Watches 2016"
-								)
-							)
-						)
-					)
-				)
+					);
+				})
 			);
 		}
 	}]);
@@ -22114,7 +22045,13 @@ var Podcasts = function (_Component) {
 	return Podcasts;
 }(_react.Component);
 
-exports.default = Podcasts;
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		podcasts: state.podcasts
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Podcasts);
 
 /***/ }),
 /* 188 */,
@@ -22297,10 +22234,10 @@ var Playlist = function (_Component) {
 			}
 
 			var searchTerm = e.target.value;
-			console.log(this.props, "ouside apimanager");
 
-			// search end point
-			this.props.podcastsReceived(searchTerm);
+			this.props.podcastsReceived(searchTerm).catch(function (err) {
+				alert(err);
+			});
 		}
 	}, {
 		key: 'render',
@@ -27066,7 +27003,9 @@ var _constants2 = _interopRequireDefault(_constants);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var initialState = {};
+var initialState = {
+	allPodcasts: null
+};
 
 exports.default = function () {
 	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -27076,8 +27015,9 @@ exports.default = function () {
 
 	switch (action.type) {
 		case _constants2.default.PODCASTS_RECEIVED:
+			updated.allPodcasts = action.payload;
 
-			console.log("PODCASTS_RECEIVED:", JSON.stringify(action.payload));
+			console.log(updated);
 
 			return updated;
 

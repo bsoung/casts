@@ -13,10 +13,11 @@ class Playlist extends Component {
 		}
 
 		const searchTerm = e.target.value;
-		console.log(this.props, "ouside apimanager")
-		
-		// search end point
-		this.props.podcastsReceived(searchTerm);
+
+		this.props.podcastsReceived(searchTerm)
+			.catch(err => {
+				alert(err);
+			});
 		
 	} 
 
