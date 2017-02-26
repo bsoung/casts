@@ -1,28 +1,26 @@
 import React from 'react';
 
 export default (props) => (
-
 	<footer className="page-footer primary-color">
 		<div className="container">
 			<div className="row">
 				<div className="col s12">
-					<p className="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+					<p className="center-align grey-text text-lighten-4">Please feel free to contact me!</p>
 						<div className="center-align">
 							<i className="ion-social-facebook m-10 white-text"></i>
-							<i className="ion-social-twitter m-10 white-text"></i>
-							<i className="ion-social-pinterest m-10 white-text"></i>
-							<i className="ion-social-dribbble m-10 white-text"></i>
+							<i className="ion-social-linkedin m-10 white-text"></i>
+							<i className="ion-social-github m-10 white-text"></i>
+							<i className="ion-social-wordpress m-10 white-text"></i>
 						</div>
 					</div>
 				</div>
 			</div>
-				<div className="line white"></div>
-				<div className="footer-copyright primary-color">
-				<div className="container">
-				2016 Codnauts
-				<a className="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+		<div className="line white"></div>
+			<div className="footer-copyright primary-color">
+				<div className="container" style={{textAlign: "center"}}>
+				By Benjamin Soung
+				</div>
 			</div>
-		</div>
 	</footer>
 
 )

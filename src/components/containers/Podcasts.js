@@ -9,7 +9,7 @@ class Podcasts extends Component {
 		            	<img src="img/banner2.jpg" alt="" />
 		            	<div className="opacity-overlay valign-wrapper">
 		            		<div className="valign center width-100">
-		                  		<h3 className="white-text">Accessories</h3>
+		                  		<h3 className="white-text">Podcasts</h3>
 		                  		<p className="white-text">Watches 2016</p>
 		                	</div>
 		              	</div>
@@ -21,7 +21,7 @@ class Podcasts extends Component {
 		            	<img src="img/banner2.jpg" alt="" />
 		            	<div className="opacity-overlay valign-wrapper">
 		            		<div className="valign center width-100">
-		                  		<h3 className="white-text">Accessories</h3>
+		                  		<h3 className="white-text">Podcasts</h3>
 		                  		<p className="white-text">Watches 2016</p>
 		                	</div>
 		              	</div>
@@ -33,7 +33,7 @@ class Podcasts extends Component {
 		            	<img src="img/banner2.jpg" alt="" />
 		            	<div className="opacity-overlay valign-wrapper">
 		            		<div className="valign center width-100">
-		                  		<h3 className="white-text">Accessories</h3>
+		                  		<h3 className="white-text">Podcasts</h3>
 		                  		<p className="white-text">Watches 2016</p>
 		                	</div>
 		              	</div>
@@ -45,7 +45,7 @@ class Podcasts extends Component {
 		            	<img src="img/banner2.jpg" alt="" />
 		            	<div className="opacity-overlay valign-wrapper">
 		            		<div className="valign center width-100">
-		                  		<h3 className="white-text">Accessories</h3>
+		                  		<h3 className="white-text">Podcasts</h3>
 		                  		<p className="white-text">Watches 2016</p>
 		                	</div>
 		              	</div>
