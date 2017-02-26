@@ -27,6 +27,13 @@ export function searchPodcasts(params) {
 	console.log('searchPodcasts:', JSON.stringify(params));
 }
 
+export function podcastSelected(podcast) {
+	return {
+		type: constants.PODCAST_SELECTED,
+		payload: podcast
+	}
+}
+
 export function podcastsReceived(searchTerm) {
 	return (dispatch) => {
 		return dispatch(

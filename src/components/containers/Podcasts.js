@@ -3,18 +3,26 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 class Podcasts extends Component {
+	selectPodCast(podcast, e) {
+		console.log('selectPodCast:', JSON.stringify(podcast));
+
+		this.props.podcastSelected(podcast);
+	}
+
 	render() {
-		const podcastList = this.props.podcasts.allPodcasts || [];
+		const { podcasts } = this.props;
+
+		const podcastList = podcasts.allPodcasts || [];
 
 		return (
 			<div>
 
 				{
-					podcastList.map(podcast => {
+					podcastList.map((podcast, i) => {
 						return (
 
-							<div key={podcast.trackId} className="shop-banner animated fadeinup delay-2">
-					            <a href="#">
+							<div key={i} className="shop-banner animated fadeinup delay-2">
+					            <a onClick={this.selectPodCast.bind(this, podcast)} href="#">
 					            	<img src={podcast.artworkUrl600} alt="" />
 					            	<div className="opacity-overlay valign-wrapper">
 					            		<div className="valign center width-100">
@@ -39,4 +47,10 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps)(Podcasts);
+const mapDispatchToProps = (dispatch) => {
+	return {
+		podcastSelected: (podcast) => dispatch(actions.podcastSelected(podcast))
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Podcasts);
