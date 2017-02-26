@@ -54,11 +54,21 @@ class Playlist extends Component {
 	}
 
 	componentDidUpdate() {
-		console.log('componentDidUpdate', JSON.stringify(this.props.podcasts.selected));
+		if (this.props.podcasts.selected == null) {
+			return;
+		}
+
+		// grab feed
+		const feedUrl = this.props.podcasts.selected.feedUrl;
+
+		if (feedUrl == null) {
+			return;
+		}
+
+		console.log('feedUrl', feedUrl);
 	}
 
 	searchPodcasts(e) {	
-
 		// e.keyCode gives us character key
 		if (e.keyCode != 13) {
 			return;

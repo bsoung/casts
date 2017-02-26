@@ -4,8 +4,6 @@ import * as actions from '../../actions';
 
 class Podcasts extends Component {
 	selectPodCast(podcast, e) {
-		console.log('selectPodCast:', JSON.stringify(podcast));
-
 		this.props.podcastSelected(podcast);
 	}
 

@@ -22004,8 +22004,6 @@ var Podcasts = function (_Component) {
 	_createClass(Podcasts, [{
 		key: 'selectPodCast',
 		value: function selectPodCast(podcast, e) {
-			console.log('selectPodCast:', JSON.stringify(podcast));
-
 			this.props.podcastSelected(podcast);
 		}
 	}, {
@@ -22294,12 +22292,22 @@ var Playlist = function (_Component) {
 	}, {
 		key: 'componentDidUpdate',
 		value: function componentDidUpdate() {
-			console.log('componentDidUpdate', JSON.stringify(this.props.podcasts.selected));
+			if (this.props.podcasts.selected == null) {
+				return;
+			}
+
+			// grab feed
+			var feedUrl = this.props.podcasts.selected.feedUrl;
+
+			if (feedUrl == null) {
+				return;
+			}
+
+			console.log('feedUrl', feedUrl);
 		}
 	}, {
 		key: 'searchPodcasts',
 		value: function searchPodcasts(e) {
-
 			// e.keyCode gives us character key
 			if (e.keyCode != 13) {
 				return;
