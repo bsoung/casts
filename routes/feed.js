@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
 
 			// convert feed xml to json
 			var xml = response.text;
-			
+
 			xml2js.parseString(xml, function(err, result) {
 				if (err) {
 					res.json({
@@ -44,7 +44,17 @@ router.get('/', function(req, res, next) {
 					return;
 				}
 
-				res.send(result);
+				var rss = result.rss;
+				var channel = rss.channel;
+
+				if (channel.length > 0) {
+					channel = channel[0];
+				}
+
+				res.json({
+					confirmation: 'success',
+					podcast: channel
+				});
 			});
 
 		});
