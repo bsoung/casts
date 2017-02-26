@@ -22243,12 +22243,83 @@ var Playlist = function (_Component) {
 	function Playlist() {
 		_classCallCheck(this, Playlist);
 
-		return _possibleConstructorReturn(this, (Playlist.__proto__ || Object.getPrototypeOf(Playlist)).apply(this, arguments));
+		var _this = _possibleConstructorReturn(this, (Playlist.__proto__ || Object.getPrototypeOf(Playlist)).call(this));
+
+		_this.state = {
+			trackList: null,
+			player: null
+		};
+		return _this;
 	}
 
 	_createClass(Playlist, [{
 		key: 'componentDidMount',
-		value: function componentDidMount() {
+		value: function componentDidMount() {}
+	}, {
+		key: 'componentDidUpdate',
+		value: function componentDidUpdate() {
+			var _this2 = this;
+
+			if (this.props.podcasts.selected == null) {
+				return;
+			}
+
+			// grab feed
+			var feedUrl = this.props.podcasts.selected.feedUrl;
+
+			console.log(feedUrl, "do we update all?");
+
+			if (feedUrl == null) {
+				return;
+			}
+
+			if (this.state.trackList != null) {
+				return;
+			}
+
+			_utils.APIManager.get('/feed', { url: feedUrl }).then(function (res) {
+				var podcast = res.podcast;
+				var selectedPodcast = _this2.props.podcasts.selected;
+				var item = podcast.item;
+
+				var list = [];
+
+				item.forEach(function (track, i) {
+					console.log(JSON.stringify(track), "track is");
+
+					var trackInfo = {};
+					var enclosure = track.enclosure[0]['$'];
+
+					trackInfo.title = track.title[0];
+					trackInfo.author = selectedPodcast.collectionName;
+					trackInfo.pic = selectedPodcast['artworkUrl600'];
+					trackInfo.url = enclosure.url;
+
+					list.push(trackInfo);
+				});
+
+				// TODO: not updating list after second click
+				if (_this2.state.player == null) {
+					_this2.initializePlayer(list);
+				}
+			}).catch(function (err) {
+				alert("Format not supported yet.");
+				console.error(err.message);
+			});
+		}
+	}, {
+		key: 'initializePlayer',
+		value: function initializePlayer(tracks) {
+			var sublist = [];
+
+			// just show 3
+			if (tracks.length > 3) {
+				for (var i = 0; i < 3; i++) {
+					sublist.push(tracks[i]);
+				}
+			} else {
+				sublist = Object.assign([], tracks);
+			}
 
 			var ap1 = new _aplayer2.default({
 				element: document.getElementById('player1'),
@@ -22259,12 +22330,7 @@ var Playlist = function (_Component) {
 				theme: '#e6d0b2',
 				preload: 'metadata',
 				mode: 'circulation',
-				music: [{
-					title: 'Preparation',
-					author: 'Hans Zimmer/Richard Harvey',
-					url: 'http://devtest.qiniudn.com/Preparation.mp3',
-					pic: 'http://devtest.qiniudn.com/Preparation.jpg'
-				}]
+				music: sublist
 			});
 
 			// ap1.on('play', function () {
@@ -22288,22 +22354,11 @@ var Playlist = function (_Component) {
 			// ap1.on('error', function () {
 			//     console.log('error');
 			// });
-		}
-	}, {
-		key: 'componentDidUpdate',
-		value: function componentDidUpdate() {
-			if (this.props.podcasts.selected == null) {
-				return;
-			}
 
-			// grab feed
-			var feedUrl = this.props.podcasts.selected.feedUrl;
-
-			if (feedUrl == null) {
-				return;
-			}
-
-			console.log('feedUrl', feedUrl);
+			this.setState({
+				trackList: tracks,
+				player: ap1
+			});
 		}
 	}, {
 		key: 'searchPodcasts',
@@ -22322,6 +22377,7 @@ var Playlist = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
+			console.log("WHAT IS OUR STATE", this.state.trackList);
 			return _react2.default.createElement(
 				'div',
 				null,
@@ -24380,8 +24436,6 @@ exports.default = {
 	get: function get(url, params) {
 		return new Promise(function (resolve, reject) {
 			_superagent2.default.get(url).query(params).set('Accept', 'application/json').end(function (err, response) {
-				console.log(response, "what is the response in apimanager");
-
 				if (err) {
 					reject(err);
 					return;

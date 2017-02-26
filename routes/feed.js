@@ -34,12 +34,15 @@ router.get('/', function(req, res, next) {
 			// convert feed xml to json
 			var xml = response.text;
 
+			// certain types not supported yet
 			xml2js.parseString(xml, function(err, result) {
 				if (err) {
 					res.json({
 						confirmation: 'fail',
 						error: err.message
 					});
+
+					console.log("ERROR HERE?? IN PARSE STRING")
 
 					return;
 				}

@@ -8,8 +8,6 @@ export default {
 			.query(params)
 			.set('Accept', 'application/json')
 			.end((err, response) => {
-				console.log(response, "what is the response in apimanager")
-
 				if (err) {
 					reject(err);
 					return;

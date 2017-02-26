@@ -6,9 +6,87 @@ import * as actions from '../../actions';
 import APlayer from 'aplayer';
 
 class Playlist extends Component {
-		componentDidMount() {
+	constructor() {
+		super();
 
-		var ap1 = new APlayer({
+		this.state = {
+			trackList: null,
+			player: null
+		}
+	}
+
+	componentDidMount() {
+
+
+	}
+
+	componentDidUpdate() {
+		if (this.props.podcasts.selected == null) {
+			return;
+		}
+
+		// grab feed
+		const feedUrl = this.props.podcasts.selected.feedUrl;
+
+		console.log(feedUrl, "do we update all?")
+
+		if (feedUrl == null) {
+			return;
+		}
+
+		if (this.state.trackList != null) {
+			return;
+		}
+
+		APIManager
+			.get('/feed', {url: feedUrl})
+			.then(res => {
+				const podcast = res.podcast;
+				const selectedPodcast = this.props.podcasts.selected;
+				const item = podcast.item;
+
+				let list = [];
+
+				item.forEach((track, i) => {
+					console.log(JSON.stringify(track), "track is")
+
+					let trackInfo = {};
+					let enclosure = track.enclosure[0]['$'];
+
+					trackInfo.title = track.title[0];
+					trackInfo.author = selectedPodcast.collectionName;
+					trackInfo.pic = selectedPodcast['artworkUrl600'];
+					trackInfo.url = enclosure.url;
+
+					list.push(trackInfo);
+				});
+
+				// TODO: not updating list after second click
+				if (this.state.player == null) {
+					this.initializePlayer(list);
+				}
+				
+			})
+			.catch(err => {
+				alert("Format not supported yet.");
+				console.error(err.message);
+			});
+	}
+
+	initializePlayer(tracks) {
+		let sublist = [];
+
+		// just show 3
+		if (tracks.length > 3) {
+			for (let i = 0; i < 3; i++) {
+				sublist.push(tracks[i]);
+			}
+
+		} else {
+			sublist = Object.assign([], tracks);
+		}
+
+		let ap1 = new APlayer({
 		    element: document.getElementById('player1'),
 		    narrow: false,
 		    autoplay: false,
@@ -17,18 +95,9 @@ class Playlist extends Component {
 		    theme: '#e6d0b2',
 		    preload: 'metadata',
 		    mode: 'circulation',
-		    music: [
-
-		    	{
-			        title: 'Preparation',
-			        author: 'Hans Zimmer/Richard Harvey',
-			        url: 'http://devtest.qiniudn.com/Preparation.mp3',
-			        pic: 'http://devtest.qiniudn.com/Preparation.jpg'
-		    	}
-
-		    ]
+		    music: sublist
 		});
-		
+
 		// ap1.on('play', function () {
 		//     console.log('play');
 		// });
@@ -50,22 +119,11 @@ class Playlist extends Component {
 		// ap1.on('error', function () {
 		//     console.log('error');
 		// });
-
-	}
-
-	componentDidUpdate() {
-		if (this.props.podcasts.selected == null) {
-			return;
-		}
-
-		// grab feed
-		const feedUrl = this.props.podcasts.selected.feedUrl;
-
-		if (feedUrl == null) {
-			return;
-		}
-
-		console.log('feedUrl', feedUrl);
+		
+		this.setState({
+			trackList: tracks,
+			player: ap1
+		})
 	}
 
 	searchPodcasts(e) {	
@@ -84,6 +142,7 @@ class Playlist extends Component {
 	} 
 
 	render() {
+		console.log("WHAT IS OUR STATE", this.state.trackList);
 		return (
 			<div>
 		    	<div className="hero-header bg-pond animated fadeindown">
