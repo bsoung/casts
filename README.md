@@ -1,6 +1,6 @@
 # Casts
 
-Users can search through a large collection of podcasts powered by iTunes, create playlists, and discover new artists. Further iterations of the app will have OAuth and personal playlists.
+Users can search through a large collection of podcasts powered by iTunes, create playlists, and discover new artists. Further iterations of the app will have OAuth and personal playlists. Also experiments with CSS animations and mobile-focused design to create a better user experience.
 
 [Try it here!](https://casts-bs.herokuapp.com/)
 
