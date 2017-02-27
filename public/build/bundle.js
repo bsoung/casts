@@ -22275,7 +22275,7 @@ var Playlist = function (_Component) {
 
 			// grab feed
 			var feedUrl = this.props.podcasts.selected.feedUrl;
-			console.log("what's the feed url?");
+			console.log(feedUrl, "what's the feed url?");
 
 			var trackList = this.props.podcasts.trackList;
 
@@ -22308,8 +22308,15 @@ var Playlist = function (_Component) {
 				var list = [];
 
 				item.forEach(function (track, i) {
+					var enclosure = null;
 					var trackInfo = {};
-					var enclosure = track.enclosure[0]['$'];
+
+					if (track.enclosure) {
+						enclosure = track.enclosure[0]['$'];
+					} else {
+
+						return;
+					}
 
 					trackInfo.title = track.title[0];
 					trackInfo.author = selectedPodcast.collectionName;
@@ -22320,28 +22327,25 @@ var Playlist = function (_Component) {
 				});
 
 				// send tracklist to reducer
-
-
 				_this2.props.trackListReady(list);
 			}).catch(function (err) {
-				alert("Format not supported yet.");
-				console.error(err.message);
+				alert("An error occured.");
+				console.error(err);
 			});
 		}
 	}, {
 		key: 'initializePlayer',
 		value: function initializePlayer(tracks) {
-			// let sublist = [];
+			var sublist = [];
 
 			// just show 3
-			// if (tracks.length > 3) {
-			// 	for (let i = 0; i < 3; i++) {
-			// 		sublist.push(tracks[i]);
-			// 	}
-
-			// } else {
-			// 	sublist = Object.assign([], tracks);
-			// }
+			if (tracks.length > 5) {
+				for (var i = 0; i < 5; i++) {
+					sublist.push(tracks[i]);
+				}
+			} else {
+				sublist = Object.assign([], tracks);
+			}
 
 			var ap1 = new _aplayer2.default({
 				element: document.getElementById('player1'),
@@ -22352,7 +22356,7 @@ var Playlist = function (_Component) {
 				theme: '#e6d0b2',
 				preload: 'metadata',
 				mode: 'circulation',
-				music: tracks
+				music: sublist
 			});
 
 			// ap1.on('play', function () {
@@ -22398,7 +22402,6 @@ var Playlist = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			console.log("WHAT IS OUR reducer state", this.props.podcasts.trackList);
 			return _react2.default.createElement(
 				'div',
 				null,

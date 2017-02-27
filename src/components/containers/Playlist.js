@@ -26,7 +26,7 @@ class Playlist extends Component {
 
 		// grab feed
 		const feedUrl = this.props.podcasts.selected.feedUrl;
-		console.log("what's the feed url?")
+		console.log(feedUrl, "what's the feed url?");
 
 		const trackList = this.props.podcasts.trackList;
 
@@ -61,8 +61,16 @@ class Playlist extends Component {
 				let list = [];
 
 				item.forEach((track, i) => {
+					let enclosure = null;
 					let trackInfo = {};
-					let enclosure = track.enclosure[0]['$'];
+
+					if (track.enclosure) {
+						enclosure = track.enclosure[0]['$'];
+
+					} else {
+
+						return;
+					}
 
 					trackInfo.title = track.title[0];
 					trackInfo.author = selectedPodcast.collectionName;
@@ -73,30 +81,28 @@ class Playlist extends Component {
 				});
 
 				// send tracklist to reducer
-				
-				
 				this.props.trackListReady(list);
 
 				
 			})
 			.catch(err => {
-				alert("Format not supported yet.");
-				console.error(err.message);
+				alert("An error occured.");
+				console.error(err);
 			});
 	}
 
 	initializePlayer(tracks) {
-		// let sublist = [];
+		let sublist = [];
 
 		// just show 3
-		// if (tracks.length > 3) {
-		// 	for (let i = 0; i < 3; i++) {
-		// 		sublist.push(tracks[i]);
-		// 	}
+		if (tracks.length > 5) {
+			for (let i = 0; i < 5; i++) {
+				sublist.push(tracks[i]);
+			}
 
-		// } else {
-		// 	sublist = Object.assign([], tracks);
-		// }
+		} else {
+			sublist = Object.assign([], tracks);
+		}
 
 		let ap1 = new APlayer({
 		    element: document.getElementById('player1'),
@@ -107,7 +113,7 @@ class Playlist extends Component {
 		    theme: '#e6d0b2',
 		    preload: 'metadata',
 		    mode: 'circulation',
-		    music: tracks
+		    music: sublist
 		});
 
 		// ap1.on('play', function () {
@@ -153,7 +159,6 @@ class Playlist extends Component {
 	} 
 
 	render() {
-		console.log("WHAT IS OUR reducer state", this.props.podcasts.trackList);
 		return (
 			<div>
 		    	<div className="hero-header bg-pond animated fadeindown">
