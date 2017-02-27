@@ -32899,7 +32899,7 @@ var Landing = function (_Component) {
 								_react2.default.createElement(
 									'div',
 									{ className: 'notify-header' },
-									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/user4.jpg', alt: '' }),
+									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/podre.jpg', alt: '' }),
 									_react2.default.createElement(
 										'div',
 										{ className: 'notify-author' },
@@ -32916,7 +32916,7 @@ var Landing = function (_Component) {
 										_react2.default.createElement(
 											'span',
 											{ className: 'small' },
-											'sent from the matrix'
+											'sent from the Pod-trix'
 										)
 									)
 								)
@@ -32927,15 +32927,7 @@ var Landing = function (_Component) {
 								_react2.default.createElement(
 									'div',
 									{ className: 'notify-header' },
-									_react2.default.createElement(
-										'div',
-										{ className: 'unknow-avatar primary-color' },
-										_react2.default.createElement(
-											'span',
-											null,
-											'C'
-										)
-									),
+									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/casti.png', alt: '' }),
 									_react2.default.createElement(
 										'div',
 										{ className: 'notify-author' },
@@ -32963,7 +32955,7 @@ var Landing = function (_Component) {
 								_react2.default.createElement(
 									'div',
 									{ className: 'notify-header' },
-									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/user2.jpg', alt: '' }),
+									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/podre.jpg', alt: '' }),
 									_react2.default.createElement(
 										'div',
 										{ className: 'notify-author' },
@@ -32975,7 +32967,7 @@ var Landing = function (_Component) {
 										_react2.default.createElement(
 											'span',
 											{ className: 'truncate' },
-											'Repairing damaged pods...'
+											'Retrieving pod goods...'
 										),
 										_react2.default.createElement(
 											'span',
@@ -32991,7 +32983,7 @@ var Landing = function (_Component) {
 								_react2.default.createElement(
 									'div',
 									{ className: 'notify-header' },
-									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/user2.jpg', alt: '' }),
+									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/podre.jpg', alt: '' }),
 									_react2.default.createElement(
 										'div',
 										{ className: 'notify-author' },
@@ -33003,7 +32995,7 @@ var Landing = function (_Component) {
 										_react2.default.createElement(
 											'span',
 											{ className: 'truncate' },
-											'Mission complete. ',
+											'Heist complete. ',
 											_react2.default.createElement(
 												'strong',
 												null,
@@ -33087,7 +33079,7 @@ exports.default = function (props) {
                 _react2.default.createElement(
                     'div',
                     { className: 'media-top-object author-bio animated fadeinright' },
-                    _react2.default.createElement('img', { src: 'img/user.jpg', alt: '', className: 'media-left avatar big' }),
+                    _react2.default.createElement('img', { src: 'img/benny.jpg', alt: '', className: 'media-left avatar big' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'media-body' },
@@ -33121,7 +33113,7 @@ exports.default = function (props) {
                     'div',
                     { className: 'media-top-object p-20 animated fadeinright delay-2' },
                     _react2.default.createElement('div', { className: 'dot primary-color' }),
-                    _react2.default.createElement('img', { src: 'img/user2.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement('img', { src: 'img/benny.jpg', alt: '', className: 'media-left avatar' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'media-body' },
@@ -33145,7 +33137,7 @@ exports.default = function (props) {
                     'div',
                     { className: 'media-top-object p-20 animated fadeinright delay-3' },
                     _react2.default.createElement('div', { className: 'dot primary-color' }),
-                    _react2.default.createElement('img', { src: 'img/user4.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement('img', { src: 'img/benny.jpg', alt: '', className: 'media-left avatar' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'media-body' },
@@ -33169,7 +33161,7 @@ exports.default = function (props) {
                     'div',
                     { className: 'media-top-object p-20 animated fadeinright delay-4' },
                     _react2.default.createElement('div', { className: 'dot primary-color' }),
-                    _react2.default.createElement('img', { src: 'img/user4.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement('img', { src: 'img/podre.jpg', alt: '', className: 'media-left avatar' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'media-body' },
@@ -33193,7 +33185,7 @@ exports.default = function (props) {
                     'div',
                     { className: 'media-top-object p-20 animated fadeinright delay-5' },
                     _react2.default.createElement('div', { className: 'dot primary-color' }),
-                    _react2.default.createElement('img', { src: 'img/user4.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement('img', { src: 'img/casti.png', alt: '', className: 'media-left avatar' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'media-body' },
@@ -33217,7 +33209,7 @@ exports.default = function (props) {
                     'div',
                     { className: 'media-top-object p-20 animated fadeinright delay-6' },
                     _react2.default.createElement('div', { className: 'dot primary-color' }),
-                    _react2.default.createElement('img', { src: 'img/user5.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement('img', { src: 'img/benny.jpg', alt: '', className: 'media-left avatar' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'media-body' },

@@ -20,20 +20,18 @@ class Landing extends Component {
 						<ul className="collection notify" style={{opacity: "0.8"}}>
 							<li className="collection-item white z-depth-1 dismissable animated fadeinup delay-2">
 								<div className="notify-header">
-									<img className="avatar circle" src="img/user4.jpg" alt="" />
+									<img className="avatar circle" src="img/podre.jpg" alt="" />
 									<div className="notify-author">
 										<span>Podre the Pod Bot</span>
 										<span className="truncate">Initializing a grande pod heist...</span>
-										<span className="small">sent from the matrix</span>
+										<span className="small">sent from the Pod-trix</span>
 									</div>
 								</div>
 							</li>
 
 							<li className="collection-item white z-depth-1 dismissable animated fadeinup delay-3">
 								<div className="notify-header">
-									<div className="unknow-avatar primary-color">
-										<span>C</span>
-									</div>
+									<img className="avatar circle" src="img/casti.png" alt="" />
 									<div className="notify-author">
 										<span>Casti the Chosen Bot</span>
 										<span className="truncate">Fighting off hostile pod agents...</span>
@@ -44,10 +42,10 @@ class Landing extends Component {
 
 							<li className="collection-item white z-depth-1 dismissable animated fadeinup delay-4">
 								<div className="notify-header">
-									<img className="avatar circle" src="img/user2.jpg" alt="" />
+									<img className="avatar circle" src="img/podre.jpg" alt="" />
 									<div className="notify-author">
 										<span>Podre the Pod Bot</span>
-										<span className="truncate">Repairing damaged pods...</span>
+										<span className="truncate">Retrieving pod goods...</span>
 										<span className="small">sent from the Pod-trix</span>
 									</div>
 								</div>
@@ -55,10 +53,10 @@ class Landing extends Component {
 
 							<li className="collection-item white z-depth-1 dismissable animated fadeinup delay-4">
 								<div className="notify-header">
-									<img className="avatar circle" src="img/user2.jpg" alt="" />
+									<img className="avatar circle" src="img/podre.jpg" alt="" />
 									<div className="notify-author">
 										<span>Podre the Pod Bot</span>
-										<span className="truncate">Mission complete. <strong>Press lock icon.</strong></span>
+										<span className="truncate">Heist complete. <strong>Press lock icon.</strong></span>
 										<span className="small">sent from the Pod-trix</span>
 									</div>
 								</div>
