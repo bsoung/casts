@@ -86,7 +86,7 @@ class Playlist extends Component {
 				
 			})
 			.catch(err => {
-				alert(err.message);
+				alert("This podcast has a broken link, please try another one.");
 				console.error(err.message);
 			});
 	}
@@ -131,7 +131,7 @@ class Playlist extends Component {
 
 		this.props.podcastsReceived(searchTerm)
 			.catch(err => {
-				alert(err);
+				alert("One moment while we catch our breathe!");
 			});
 		
 	} 
