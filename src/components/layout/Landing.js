@@ -1,13 +1,81 @@
 import React, { Component } from 'react';
 import { Footer, Navigation } from '../view';
+import { Link } from 'react-router';
 
 class Landing extends Component {
 	render() {
 		return (
+
 			<div id="main"> 
-			   <h1>Landing page</h1>
-			   <Navigation />
+				<div id="content" className="main animated fadein">
+
+					<div className="fullscreen autoflow bg-4">
+						<div className="opacity-overlay"></div>
+
+						<div className="clock center-align animated fadein delay-2">
+							<h2>Pod : <strong>Casts</strong></h2>
+							<span>Broaden horizons</span>
+						</div>
+
+						<ul className="collection notify">
+							<li className="collection-item white z-depth-1 dismissable animated fadeinup delay-2">
+								<div className="notify-header">
+									<img className="avatar circle" src="img/user4.jpg" alt="" />
+									<div className="notify-author">
+										<span>Podre the Pod Bot</span>
+										<span className="truncate">Initializing pod grappling hooks...</span>
+										<span className="small">sent from the matrix</span>
+									</div>
+								</div>
+							</li>
+
+							<li className="collection-item white z-depth-1 dismissable animated fadeinup delay-3">
+								<div className="notify-header">
+									<div className="unknow-avatar primary-color">
+										<span>C</span>
+									</div>
+									<div className="notify-author">
+										<span>Casti the Chosen Bot</span>
+										<span className="truncate">Fighting off hostile pod agents...</span>
+										<span className="small">sent from the matrix</span>
+									</div>
+								</div>
+							</li>
+
+							<li className="collection-item white z-depth-1 dismissable animated fadeinup delay-4">
+								<div className="notify-header">
+									<img className="avatar circle" src="img/user2.jpg" alt="" />
+									<div className="notify-author">
+										<span>Podre the Pod Bot</span>
+										<span className="truncate">Repairing damaged pods...</span>
+										<span className="small">sent from the matrix</span>
+									</div>
+								</div>
+							</li>
+
+							<li className="collection-item white z-depth-1 dismissable animated fadeinup delay-4">
+								<div className="notify-header">
+									<img className="avatar circle" src="img/user2.jpg" alt="" />
+									<div className="notify-author">
+										<span>Podre the Pod Bot</span>
+										<span className="truncate">Mission complete. <strong>Press lock icon.</strong></span>
+										<span className="small">sent from the matrix</span>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+
+						<div className="animated bouncein delay-6">
+							<div className="unlock">
+								<Link to="/feature" href="#"><i className="ion-android-lock"></i></Link>
+							</div>
+						</div>
+					</div>
+
+				</div> 
 			</div>
+
 		)
 	}
 }

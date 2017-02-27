@@ -8,8 +8,14 @@ class Featured extends Component {
 		return (
 			<div id="main"> 
 			    <div id="content" className="main animated fadein">
-
 			    	<Playlist />
+
+
+			    	<div className="section center">
+						<h4 className="m-0"><strong>Discover</strong></h4>
+						<div className="line"></div>
+						<p className="text-flow m-0">Satisfy your podcast hunger with five sample sessions and explore a large variety of topics.</p>
+					</div>
 
 			        <div className="animated fadeinup delay-1">
 			        	<Podcasts />

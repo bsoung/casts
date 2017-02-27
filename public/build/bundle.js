@@ -21826,10 +21826,26 @@ exports.default = function (props) {
 					_react2.default.createElement(
 						"div",
 						{ className: "center-align" },
-						_react2.default.createElement("i", { className: "ion-social-facebook m-10 white-text" }),
-						_react2.default.createElement("i", { className: "ion-social-linkedin m-10 white-text" }),
-						_react2.default.createElement("i", { className: "ion-social-github m-10 white-text" }),
-						_react2.default.createElement("i", { className: "ion-social-wordpress m-10 white-text" })
+						_react2.default.createElement(
+							"a",
+							{ href: "https://twitter.com/BenjaminSoung" },
+							_react2.default.createElement("i", { className: "ion-social-twitter m-10 white-text" })
+						),
+						_react2.default.createElement(
+							"a",
+							{ href: "https://www.linkedin.com/in/bennysong/" },
+							_react2.default.createElement("i", { className: "ion-social-linkedin m-10 white-text" })
+						),
+						_react2.default.createElement(
+							"a",
+							{ href: "https://github.com/bsoung" },
+							_react2.default.createElement("i", { className: "ion-social-github m-10 white-text" })
+						),
+						_react2.default.createElement(
+							"a",
+							{ href: "https://dancingandcoding.com/" },
+							_react2.default.createElement("i", { className: "ion-social-wordpress m-10 white-text" })
+						)
 					)
 				)
 			)
@@ -21926,27 +21942,9 @@ exports.default = function (props) {
 						'li',
 						null,
 						_react2.default.createElement(
-							_reactRouter.Link,
-							{ to: '/feature', href: '#feature', className: 'no-child' },
-							'Podcasts'
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						null,
-						_react2.default.createElement(
 							'a',
 							{ href: '#', className: 'no-child' },
-							'Shop'
-						)
-					),
-					_react2.default.createElement(
-						'li',
-						null,
-						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'no-child' },
-							'News'
+							'About'
 						)
 					),
 					_react2.default.createElement(
@@ -21955,7 +21953,7 @@ exports.default = function (props) {
 						_react2.default.createElement(
 							_reactRouter.Link,
 							{ to: '/', href: '#', className: 'no-child' },
-							'Home'
+							'Close Podbox'
 						)
 					)
 				)
@@ -22150,6 +22148,25 @@ var Featured = function (_Component) {
 					'div',
 					{ id: 'content', className: 'main animated fadein' },
 					_react2.default.createElement(_containers.Playlist, null),
+					_react2.default.createElement(
+						'div',
+						{ className: 'section center' },
+						_react2.default.createElement(
+							'h4',
+							{ className: 'm-0' },
+							_react2.default.createElement(
+								'strong',
+								null,
+								'Discover'
+							)
+						),
+						_react2.default.createElement('div', { className: 'line' }),
+						_react2.default.createElement(
+							'p',
+							{ className: 'text-flow m-0' },
+							'Satisfy your podcast hunger with five sample sessions and explore a large variety of topics.'
+						)
+					),
 					_react2.default.createElement(
 						'div',
 						{ className: 'animated fadeinup delay-1' },
@@ -32805,6 +32822,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _view = __webpack_require__(184);
 
+var _reactRouter = __webpack_require__(277);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32829,11 +32848,175 @@ var Landing = function (_Component) {
 				'div',
 				{ id: 'main' },
 				_react2.default.createElement(
-					'h1',
-					null,
-					'Landing page'
-				),
-				_react2.default.createElement(_view.Navigation, null)
+					'div',
+					{ id: 'content', className: 'main animated fadein' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'fullscreen autoflow bg-4' },
+						_react2.default.createElement('div', { className: 'opacity-overlay' }),
+						_react2.default.createElement(
+							'div',
+							{ className: 'clock center-align animated fadein delay-2' },
+							_react2.default.createElement(
+								'h2',
+								null,
+								'Pod : ',
+								_react2.default.createElement(
+									'strong',
+									null,
+									'Casts'
+								)
+							),
+							_react2.default.createElement(
+								'span',
+								null,
+								'Broaden horizons'
+							)
+						),
+						_react2.default.createElement(
+							'ul',
+							{ className: 'collection notify' },
+							_react2.default.createElement(
+								'li',
+								{ className: 'collection-item white z-depth-1 dismissable animated fadeinup delay-2' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'notify-header' },
+									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/user4.jpg', alt: '' }),
+									_react2.default.createElement(
+										'div',
+										{ className: 'notify-author' },
+										_react2.default.createElement(
+											'span',
+											null,
+											'Podre the Pod Bot'
+										),
+										_react2.default.createElement(
+											'span',
+											{ className: 'truncate' },
+											'Initializing pod grappling hooks...'
+										),
+										_react2.default.createElement(
+											'span',
+											{ className: 'small' },
+											'sent from the matrix'
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ className: 'collection-item white z-depth-1 dismissable animated fadeinup delay-3' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'notify-header' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'unknow-avatar primary-color' },
+										_react2.default.createElement(
+											'span',
+											null,
+											'C'
+										)
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'notify-author' },
+										_react2.default.createElement(
+											'span',
+											null,
+											'Casti the Chosen Bot'
+										),
+										_react2.default.createElement(
+											'span',
+											{ className: 'truncate' },
+											'Fighting off hostile pod agents...'
+										),
+										_react2.default.createElement(
+											'span',
+											{ className: 'small' },
+											'sent from the matrix'
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ className: 'collection-item white z-depth-1 dismissable animated fadeinup delay-4' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'notify-header' },
+									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/user2.jpg', alt: '' }),
+									_react2.default.createElement(
+										'div',
+										{ className: 'notify-author' },
+										_react2.default.createElement(
+											'span',
+											null,
+											'Podre the Pod Bot'
+										),
+										_react2.default.createElement(
+											'span',
+											{ className: 'truncate' },
+											'Repairing damaged pods...'
+										),
+										_react2.default.createElement(
+											'span',
+											{ className: 'small' },
+											'sent from the matrix'
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								'li',
+								{ className: 'collection-item white z-depth-1 dismissable animated fadeinup delay-4' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'notify-header' },
+									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/user2.jpg', alt: '' }),
+									_react2.default.createElement(
+										'div',
+										{ className: 'notify-author' },
+										_react2.default.createElement(
+											'span',
+											null,
+											'Podre the Pod Bot'
+										),
+										_react2.default.createElement(
+											'span',
+											{ className: 'truncate' },
+											'Mission complete. ',
+											_react2.default.createElement(
+												'strong',
+												null,
+												'Press lock icon.'
+											)
+										),
+										_react2.default.createElement(
+											'span',
+											{ className: 'small' },
+											'sent from the matrix'
+										)
+									)
+								)
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'animated bouncein delay-6' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'unlock' },
+								_react2.default.createElement(
+									_reactRouter.Link,
+									{ to: '/feature', href: '#' },
+									_react2.default.createElement('i', { className: 'ion-android-lock' })
+								)
+							)
+						)
+					)
+				)
 			);
 		}
 	}]);

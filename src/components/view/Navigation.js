@@ -15,13 +15,9 @@ export default (props) => (
 		<nav id="menu" className="menu">
 			<div className="menu-navigation">
 				<ul className="full-menu collapsible">
-					<li><Link to="/feature" href="#feature" className="no-child">Podcasts</Link></li>
-					<li><a href="#" className="no-child">Shop</a></li>
-					<li><a href="#" className="no-child">News</a></li>
-					<li><Link to="/" href="#" className="no-child">Home</Link></li>
-					
+					<li><a href="#" className="no-child">About</a></li>
+					<li><Link to="/" href="#" className="no-child">Close Podbox</Link></li>
 				</ul>
-     
 			</div>
 		</nav> 
 	</div>
