@@ -7,7 +7,7 @@ class Featured extends Component {
 	render() {
 		return (
 			<div id="main"> 
-			    <div id="content" className="main animated fadein" style={{height: "100vh"}}>
+			    <div id="content" className="main animated fadein">
 			    	<Playlist />
 
 

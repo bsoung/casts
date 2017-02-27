@@ -21811,7 +21811,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = function (props) {
 	return _react2.default.createElement(
 		"footer",
-		{ className: "page-footer primary-color", style: { marginTop: "270px" } },
+		{ className: "page-footer primary-color" },
 		_react2.default.createElement(
 			"div",
 			{ className: "container" },
@@ -22163,7 +22163,7 @@ var Featured = function (_Component) {
 				{ id: 'main' },
 				_react2.default.createElement(
 					'div',
-					{ id: 'content', className: 'main animated fadein', style: { height: "100vh" } },
+					{ id: 'content', className: 'main animated fadein' },
 					_react2.default.createElement(_containers.Playlist, null),
 					_react2.default.createElement(
 						'div',
@@ -32866,7 +32866,7 @@ var Landing = function (_Component) {
 				{ id: 'main' },
 				_react2.default.createElement(
 					'div',
-					{ id: 'content', className: 'main animated fadein', style: { height: "100vh" } },
+					{ id: 'content', className: 'main animated fadein' },
 					_react2.default.createElement(
 						'div',
 						{ className: 'fullscreen autoflow bg-main' },

@@ -243,79 +243,79 @@ video.responsive-video {
   background: linear-gradient(135deg,#bcd861,#16becf);
 }
 .bg-1 {
-  background: url(../img/1.jpg) 
+  background: url(../../img/1.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-2 {
-  background: url(../img/2.jpg) 
+  background: url(../../img/2.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-3 {
-  background: url(../img/3.jpg) 
+  background: url(../../img/3.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-4 {
-  background: url(../img/4.jpg) 
+  background: url(../../img/4.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-5 {
-  background: url(../img/5.jpg) 
+  background: url(../../img/5.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-11 {
-  background: url(../img/shop.jpg) 
+  background: url(../../img/shop.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-v-1 {
-  background: url(../img/v1.jpg) 
+  background: url(../../img/v1.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-v-2 {
-  background: url(../img/v2.jpg) 
+  background: url(../../img/v2.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-v-3 {
-  background: url(../img/v3.jpg) 
+  background: url(../../img/v3.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-v-4 {
-  background: url(../img/v4.jpg) 
+  background: url(../../img/v4.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-v-5 {
-  background: url(../img/v5.jpg) 
+  background: url(../../img/v5.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-v-6 {
-  background: url(../img/v6.jpg) 
+  background: url(../../img/v6.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-blur {
-  background: url(../img/blur.jpg) 
+  background: url(../../img/blur.jpg) 
               no-repeat 
               center / cover;
 }
 .bg-shop {
-  background: url(../img/shop.jpg) 
+  background: url(../../img/shop.jpg) 
               no-repeat 
               center / cover;
 }
 
 /* custom bg */
 .bg-pond {
-  background: url(../img/pond.gif) 
+  background: url(../../img/pond.gif) 
               no-repeat 
               center / cover;
 }
@@ -323,7 +323,7 @@ video.responsive-video {
 
 
 .bg-rolling-sky {
-  background: url(../img/rolling-sky.gif) 
+  background: url(../../img/rolling-sky.gif) 
               no-repeat 
               center / cover;
 
@@ -332,7 +332,7 @@ video.responsive-video {
 
 
 .bg-main {
-  background: url(../img/journey.jpg) 
+  background: url(../../img/journey.jpg) 
               no-repeat 
               center / cover;
 
