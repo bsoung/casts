@@ -21,6 +21,7 @@ router.get('/', function(req, res, next) {
 	superagent
 		.get(url)
 		.query(null)
+		.buffer() // xml
 		.end(function(err, response) {
 			if (err) {
 				res.json({
@@ -31,10 +32,9 @@ router.get('/', function(req, res, next) {
 				return;
 			}
 
-			// convert feed xml to json
 			var xml = response.text;
 
-			// certain types not supported yet
+			// convert feed xml to json
 			xml2js.parseString(xml, function(err, result) {
 				if (err) {
 					res.json({

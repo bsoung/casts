@@ -26,14 +26,17 @@ class Playlist extends Component {
 
 		// grab feed
 		const feedUrl = this.props.podcasts.selected.feedUrl;
+		console.log("what's the feed url?")
+
+		const trackList = this.props.podcasts.trackList;
 
 		if (feedUrl == null) {
 			return;
 		}
 
-		if (this.props.podcasts.trackList != null) {
+		if (trackList != null) {
 			if (this.state.player == null) {
-				this.initializePlayer(this.props.podcasts.trackList);
+				this.initializePlayer(trackList);
 			}
 
 			return;
@@ -41,7 +44,7 @@ class Playlist extends Component {
 
 		// reset player
 		if (this.state.player != null) {
-			
+
 			this.state.player.pause();
 			this.setState({
 				player: null
@@ -83,17 +86,17 @@ class Playlist extends Component {
 	}
 
 	initializePlayer(tracks) {
-		let sublist = [];
+		// let sublist = [];
 
 		// just show 3
-		if (tracks.length > 3) {
-			for (let i = 0; i < 3; i++) {
-				sublist.push(tracks[i]);
-			}
+		// if (tracks.length > 3) {
+		// 	for (let i = 0; i < 3; i++) {
+		// 		sublist.push(tracks[i]);
+		// 	}
 
-		} else {
-			sublist = Object.assign([], tracks);
-		}
+		// } else {
+		// 	sublist = Object.assign([], tracks);
+		// }
 
 		let ap1 = new APlayer({
 		    element: document.getElementById('player1'),
@@ -104,7 +107,7 @@ class Playlist extends Component {
 		    theme: '#e6d0b2',
 		    preload: 'metadata',
 		    mode: 'circulation',
-		    music: sublist
+		    music: tracks
 		});
 
 		// ap1.on('play', function () {
