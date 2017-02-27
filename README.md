@@ -7,7 +7,7 @@ Users can search through a large collection of podcasts powered by iTunes, creat
 ## Motivation
 
 * Parsing XML to JSON with React components to receive podcast information. 
-* Music player with integrated playlist with a collapsable list of music files.
+* Music player with integrated playlist and collapsable audio list.
 * Users can search for thousands of podcasts with hundreds of collections. 
 
 ## Technologies
