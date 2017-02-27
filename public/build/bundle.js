@@ -83,6 +83,8 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _layout = __webpack_require__(189);
 
+var _view = __webpack_require__(184);
+
 var _stores = __webpack_require__(242);
 
 var _stores2 = _interopRequireDefault(_stores);
@@ -100,7 +102,8 @@ var app = _react2.default.createElement(
 		_reactRouter.Router,
 		{ history: _reactRouter.browserHistory },
 		_react2.default.createElement(_reactRouter.Route, { path: '/', component: _layout.Landing }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/feature', component: _layout.Featured })
+		_react2.default.createElement(_reactRouter.Route, { path: '/feature', component: _layout.Featured }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/about', component: _view.About })
 	)
 );
 
@@ -21873,7 +21876,7 @@ exports.default = function (props) {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.Search = exports.Navigation = exports.Footer = undefined;
+exports.About = exports.Search = exports.Navigation = exports.Footer = undefined;
 
 var _Footer = __webpack_require__(183);
 
@@ -21887,11 +21890,16 @@ var _Search = __webpack_require__(191);
 
 var _Search2 = _interopRequireDefault(_Search);
 
+var _About = __webpack_require__(303);
+
+var _About2 = _interopRequireDefault(_About);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Footer = _Footer2.default;
 exports.Navigation = _Navigation2.default;
 exports.Search = _Search2.default;
+exports.About = _About2.default;
 
 /***/ }),
 /* 185 */,
@@ -21942,8 +21950,8 @@ exports.default = function (props) {
 						'li',
 						null,
 						_react2.default.createElement(
-							'a',
-							{ href: '#', className: 'no-child' },
+							_reactRouter.Link,
+							{ to: '/about', href: '#', className: 'no-child' },
 							'About'
 						)
 					),
@@ -21952,8 +21960,17 @@ exports.default = function (props) {
 						null,
 						_react2.default.createElement(
 							_reactRouter.Link,
+							{ to: '/feature', href: '#', className: 'no-child' },
+							'Search'
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						_react2.default.createElement(
+							_reactRouter.Link,
 							{ to: '/', href: '#', className: 'no-child' },
-							'Close Podbox'
+							'Lock'
 						)
 					)
 				)
@@ -32852,7 +32869,7 @@ var Landing = function (_Component) {
 					{ id: 'content', className: 'main animated fadein' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'fullscreen autoflow bg-4' },
+						{ className: 'fullscreen autoflow bg-space' },
 						_react2.default.createElement('div', { className: 'opacity-overlay' }),
 						_react2.default.createElement(
 							'div',
@@ -32875,7 +32892,7 @@ var Landing = function (_Component) {
 						),
 						_react2.default.createElement(
 							'ul',
-							{ className: 'collection notify' },
+							{ className: 'collection notify', style: { opacity: "0.8" } },
 							_react2.default.createElement(
 								'li',
 								{ className: 'collection-item white z-depth-1 dismissable animated fadeinup delay-2' },
@@ -32894,7 +32911,7 @@ var Landing = function (_Component) {
 										_react2.default.createElement(
 											'span',
 											{ className: 'truncate' },
-											'Initializing pod grappling hooks...'
+											'Initializing a grande pod heist...'
 										),
 										_react2.default.createElement(
 											'span',
@@ -32935,7 +32952,7 @@ var Landing = function (_Component) {
 										_react2.default.createElement(
 											'span',
 											{ className: 'small' },
-											'sent from the matrix'
+											'sent from the Pod-trix'
 										)
 									)
 								)
@@ -32963,7 +32980,7 @@ var Landing = function (_Component) {
 										_react2.default.createElement(
 											'span',
 											{ className: 'small' },
-											'sent from the matrix'
+											'sent from the Pod-trix'
 										)
 									)
 								)
@@ -32996,7 +33013,7 @@ var Landing = function (_Component) {
 										_react2.default.createElement(
 											'span',
 											{ className: 'small' },
-											'sent from the matrix'
+											'sent from the Pod-trix'
 										)
 									)
 								)
@@ -33025,6 +33042,206 @@ var Landing = function (_Component) {
 }(_react.Component);
 
 exports.default = Landing;
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(81);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Navigation = __webpack_require__(186);
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (props) {
+    return _react2.default.createElement(
+        'div',
+        { id: 'main' },
+        _react2.default.createElement(
+            'div',
+            { id: 'content', className: 'main animated fadein' },
+            _react2.default.createElement(
+                'div',
+                { className: 'relative bg-rolling-sky autoflow' },
+                _react2.default.createElement('div', { className: 'opacity-overlay' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'hero-header hero-small animated fadeindown' },
+                    _react2.default.createElement(
+                        'h1',
+                        { className: 'hero-title white-text' },
+                        'About Casts'
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'media-top-object author-bio animated fadeinright' },
+                    _react2.default.createElement('img', { src: 'img/user.jpg', alt: '', className: 'media-left avatar big' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'media-body' },
+                        _react2.default.createElement(
+                            'h4',
+                            { className: 'white-text' },
+                            'Benjamin Soung'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'small white-text' },
+                            _react2.default.createElement(
+                                'strong',
+                                null,
+                                'continues building'
+                            ),
+                            ' up the pod homebase to ward off attacks from those pesky pod-stealing agents. A never-ending labor of love. Casts is an on-going project exploring responsive design, animations, and the wonderful world of React. Made for those who wish to immerse themselves in the world of user generated feeds.'
+                        ),
+                        _react2.default.createElement(
+                            'a',
+                            { href: 'https://www.soungbenjamin.com', className: 'waves-effect waves-light btn primary-color block animated bouncein delay-2' },
+                            'Visit Benjamin\'s website'
+                        )
+                    )
+                )
+            ),
+            _react2.default.createElement(
+                'div',
+                { className: 'timeline' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'media-top-object p-20 animated fadeinright delay-2' },
+                    _react2.default.createElement('div', { className: 'dot primary-color' }),
+                    _react2.default.createElement('img', { src: 'img/user2.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'media-body' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            _react2.default.createElement(
+                                'strong',
+                                null,
+                                'Benjamin Soung'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'small grey-text' },
+                            'Benjamin continues to add, test, and debug new features to the Casts app. The next adventure lies in the database! May he meet more friendly bots along the way!'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'media-top-object p-20 animated fadeinright delay-3' },
+                    _react2.default.createElement('div', { className: 'dot primary-color' }),
+                    _react2.default.createElement('img', { src: 'img/user4.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'media-body' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            _react2.default.createElement(
+                                'strong',
+                                null,
+                                'Benjamin Soung'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'small grey-text' },
+                            'With the help of his fellow bots, Benjamin was able to finish the first version of his app and deploy it to Heroku.'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'media-top-object p-20 animated fadeinright delay-4' },
+                    _react2.default.createElement('div', { className: 'dot primary-color' }),
+                    _react2.default.createElement('img', { src: 'img/user4.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'media-body' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            _react2.default.createElement(
+                                'strong',
+                                null,
+                                'Podre the Pod Bot'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'small grey-text' },
+                            'A resourceful little bot named Podre appeared out of nowhere with powerful API scavenging skills. He would prove useful to the tasks ahead.'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'media-top-object p-20 animated fadeinright delay-5' },
+                    _react2.default.createElement('div', { className: 'dot primary-color' }),
+                    _react2.default.createElement('img', { src: 'img/user4.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'media-body' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            _react2.default.createElement(
+                                'strong',
+                                null,
+                                'Casti the Chosen Bot'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'small grey-text' },
+                            'Casti found her way through the Pod-trix and made herself home in Casts. She is the Chosen Bot, capable of fighting off hordes of pesky bugs and agents.'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'media-top-object p-20 animated fadeinright delay-6' },
+                    _react2.default.createElement('div', { className: 'dot primary-color' }),
+                    _react2.default.createElement('img', { src: 'img/user5.jpg', alt: '', className: 'media-left avatar' }),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'media-body' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            _react2.default.createElement(
+                                'strong',
+                                null,
+                                'Benjamin Soung'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'small grey-text' },
+                            'One morning, Benjamin was browsing some awesome programming podcasts when he suddenly felt that familiar itch in the back of his brain. It was time for another project. This time, he would build his most elegant project yet and help other people discover new podcasts!'
+                        )
+                    )
+                )
+            )
+        ),
+        _react2.default.createElement(_Navigation2.default, null)
+    );
+};
 
 /***/ })
 /******/ ]);

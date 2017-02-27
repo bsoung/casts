@@ -9,7 +9,7 @@ class Landing extends Component {
 			<div id="main"> 
 				<div id="content" className="main animated fadein">
 
-					<div className="fullscreen autoflow bg-4">
+					<div className="fullscreen autoflow bg-space">
 						<div className="opacity-overlay"></div>
 
 						<div className="clock center-align animated fadein delay-2">
@@ -17,13 +17,13 @@ class Landing extends Component {
 							<span>Broaden horizons</span>
 						</div>
 
-						<ul className="collection notify">
+						<ul className="collection notify" style={{opacity: "0.8"}}>
 							<li className="collection-item white z-depth-1 dismissable animated fadeinup delay-2">
 								<div className="notify-header">
 									<img className="avatar circle" src="img/user4.jpg" alt="" />
 									<div className="notify-author">
 										<span>Podre the Pod Bot</span>
-										<span className="truncate">Initializing pod grappling hooks...</span>
+										<span className="truncate">Initializing a grande pod heist...</span>
 										<span className="small">sent from the matrix</span>
 									</div>
 								</div>
@@ -37,7 +37,7 @@ class Landing extends Component {
 									<div className="notify-author">
 										<span>Casti the Chosen Bot</span>
 										<span className="truncate">Fighting off hostile pod agents...</span>
-										<span className="small">sent from the matrix</span>
+										<span className="small">sent from the Pod-trix</span>
 									</div>
 								</div>
 							</li>
@@ -48,7 +48,7 @@ class Landing extends Component {
 									<div className="notify-author">
 										<span>Podre the Pod Bot</span>
 										<span className="truncate">Repairing damaged pods...</span>
-										<span className="small">sent from the matrix</span>
+										<span className="small">sent from the Pod-trix</span>
 									</div>
 								</div>
 							</li>
@@ -59,7 +59,7 @@ class Landing extends Component {
 									<div className="notify-author">
 										<span>Podre the Pod Bot</span>
 										<span className="truncate">Mission complete. <strong>Press lock icon.</strong></span>
-										<span className="small">sent from the matrix</span>
+										<span className="small">sent from the Pod-trix</span>
 									</div>
 								</div>
 							</li>

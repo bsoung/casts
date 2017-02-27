@@ -321,9 +321,27 @@ video.responsive-video {
 
 /* custom bg */
 .bg-pond {
-  background: url(http://i.imgur.com/YUGDE3d.gif) 
-            no-repeat 
-            center / cover;
+  background: url(../img/pond.gif) 
+              no-repeat 
+              center / cover;
+}
+
+
+
+.bg-rolling-sky {
+  background: url(../img/rolling-sky.gif) 
+              no-repeat 
+              center / cover;
+
+}
+
+
+
+.bg-space {
+  background: url(../img/space.gif) 
+              no-repeat 
+              center / cover;
+
 }
 
 /* Overlay Layers */
