@@ -22329,8 +22329,8 @@ var Playlist = function (_Component) {
 				// send tracklist to reducer
 				_this2.props.trackListReady(list);
 			}).catch(function (err) {
-				alert("An error occured.");
-				console.error(err);
+				alert(err.message);
+				console.error(err.message);
 			});
 		}
 	}, {

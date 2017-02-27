@@ -86,8 +86,8 @@ class Playlist extends Component {
 				
 			})
 			.catch(err => {
-				alert("An error occured.");
-				console.error(err);
+				alert(err.message);
+				console.error(err.message);
 			});
 	}
 

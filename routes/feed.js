@@ -32,6 +32,15 @@ router.get('/', function(req, res, next) {
 				return;
 			}
 
+			if (response.text == '') {
+				res.json({
+					confirmation: 'fail',
+					message: "Empty RSS Link"
+				});
+
+				return;
+			}
+
 			var xml = response.text;
 
 			// convert feed xml to json
@@ -41,8 +50,6 @@ router.get('/', function(req, res, next) {
 						confirmation: 'fail',
 						error: err.message
 					});
-
-					console.log("ERROR HERE?? IN PARSE STRING")
 
 					return;
 				}
