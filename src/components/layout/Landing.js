@@ -12,7 +12,7 @@ class Landing extends Component {
 					<div className="fullscreen autoflow bg-main">
 						<div className="opacity-overlay"></div>
 
-						<div className="clock center-align animated fadein delay-2">
+						<div className="clock center-align animated fadein delay-2" style={{zIndex: "999"}}>
 							<h2>Pod : <strong>Casts</strong></h2>
 							<span>Broaden horizons</span>
 						</div>

@@ -32873,7 +32873,7 @@ var Landing = function (_Component) {
 						_react2.default.createElement('div', { className: 'opacity-overlay' }),
 						_react2.default.createElement(
 							'div',
-							{ className: 'clock center-align animated fadein delay-2' },
+							{ className: 'clock center-align animated fadein delay-2', style: { zIndex: "999" } },
 							_react2.default.createElement(
 								'h2',
 								null,
