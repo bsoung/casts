@@ -6,7 +6,7 @@ export default (props) => (
 
         <div id="content" className="main animated fadein">
 
-            <div className="relative bg-rolling-sky autoflow">
+            <div className="relative bg-rolling-sky animated fadeindown">
 
                 <div className="opacity-overlay"></div>
 
