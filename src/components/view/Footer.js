@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default (props) => (
-	<footer className="page-footer primary-color">
+	<footer className="page-footer primary-color" style={{marginTop: "270px"}}>
 		<div className="container">
 			<div className="row">
 				<div className="col s12">

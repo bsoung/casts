@@ -7,7 +7,7 @@ class Landing extends Component {
 		return (
 
 			<div id="main"> 
-				<div id="content" className="main animated fadein">
+				<div id="content" className="main animated fadein" style={{height: "100vh"}}>
 
 					<div className="fullscreen autoflow bg-main">
 						<div className="opacity-overlay"></div>
