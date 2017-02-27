@@ -21,8 +21,8 @@ Users can search through a large collection of podcasts powered by iTunes, creat
 
 ## API Reference
 
-* GET /search/:term    :: makes an API to itunes and returns a podcasts that match with term
-* GET /feed/:feedUrl    :: returns an XML file converted to JSON for processing
+* GET /search/:term    :: makes a GET API request to itunes and returns a list of podcasts that match with the search term
+* GET /feed/:feedUrl    :: returns a XML file converted to JSON for parsing 
 
 
 ## Develop
