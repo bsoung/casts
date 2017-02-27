@@ -32869,7 +32869,7 @@ var Landing = function (_Component) {
 					{ id: 'content', className: 'main animated fadein' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'fullscreen autoflow bg-space' },
+						{ className: 'fullscreen autoflow bg-main' },
 						_react2.default.createElement('div', { className: 'opacity-overlay' }),
 						_react2.default.createElement(
 							'div',

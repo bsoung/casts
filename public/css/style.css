@@ -331,8 +331,8 @@ video.responsive-video {
 
 
 
-.bg-space {
-  background: url(../img/space.gif) 
+.bg-main {
+  background: url(../img/journey.jpg) 
               no-repeat 
               center / cover;
 

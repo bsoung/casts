@@ -9,7 +9,7 @@ class Landing extends Component {
 			<div id="main"> 
 				<div id="content" className="main animated fadein">
 
-					<div className="fullscreen autoflow bg-space">
+					<div className="fullscreen autoflow bg-main">
 						<div className="opacity-overlay"></div>
 
 						<div className="clock center-align animated fadein delay-2">
