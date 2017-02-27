@@ -34,6 +34,13 @@ export function podcastSelected(podcast) {
 	}
 }
 
+export function trackListReady(list) {
+	return {
+		type: constants.TRACKLIST_READY,
+		payload: list
+	}
+}
+
 export function podcastsReceived(searchTerm) {
 	return (dispatch) => {
 		return dispatch(

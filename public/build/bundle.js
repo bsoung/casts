@@ -22246,7 +22246,6 @@ var Playlist = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (Playlist.__proto__ || Object.getPrototypeOf(Playlist)).call(this));
 
 		_this.state = {
-			trackList: null,
 			player: null
 		};
 		return _this;
@@ -22267,14 +22266,25 @@ var Playlist = function (_Component) {
 			// grab feed
 			var feedUrl = this.props.podcasts.selected.feedUrl;
 
-			console.log(feedUrl, "do we update all?");
-
 			if (feedUrl == null) {
 				return;
 			}
 
-			if (this.state.trackList != null) {
+			if (this.props.podcasts.trackList != null) {
+				if (this.state.player == null) {
+					this.initializePlayer(this.props.podcasts.trackList);
+				}
+
 				return;
+			}
+
+			// reset player
+			if (this.state.player != null) {
+
+				this.state.player.pause();
+				this.setState({
+					player: null
+				});
 			}
 
 			_utils.APIManager.get('/feed', { url: feedUrl }).then(function (res) {
@@ -22285,8 +22295,6 @@ var Playlist = function (_Component) {
 				var list = [];
 
 				item.forEach(function (track, i) {
-					console.log(JSON.stringify(track), "track is");
-
 					var trackInfo = {};
 					var enclosure = track.enclosure[0]['$'];
 
@@ -22298,10 +22306,10 @@ var Playlist = function (_Component) {
 					list.push(trackInfo);
 				});
 
-				// TODO: not updating list after second click
-				if (_this2.state.player == null) {
-					_this2.initializePlayer(list);
-				}
+				// send tracklist to reducer
+
+
+				_this2.props.trackListReady(list);
 			}).catch(function (err) {
 				alert("Format not supported yet.");
 				console.error(err.message);
@@ -22356,7 +22364,6 @@ var Playlist = function (_Component) {
 			// });
 
 			this.setState({
-				trackList: tracks,
 				player: ap1
 			});
 		}
@@ -22377,7 +22384,7 @@ var Playlist = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			console.log("WHAT IS OUR STATE", this.state.trackList);
+			console.log("WHAT IS OUR reducer state", this.props.podcasts.trackList);
 			return _react2.default.createElement(
 				'div',
 				null,
@@ -22413,6 +22420,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 	return {
 		podcastsReceived: function podcastsReceived(podcasts) {
 			return dispatch(actions.podcastsReceived(podcasts));
+		},
+		trackListReady: function trackListReady(list) {
+			return dispatch(actions.trackListReady(list));
 		}
 	};
 };
@@ -27103,7 +27113,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 	SEARCH_PODCASTS: "SEARCH_PODCASTS",
 	PODCASTS_RECEIVED: "PODCASTS_RECEIVED",
-	PODCAST_SELECTED: "PODCAST_SELECTED"
+	PODCAST_SELECTED: "PODCAST_SELECTED",
+	TRACKLIST_READY: "TRACKLIST_READY"
 };
 
 /***/ }),
@@ -27145,7 +27156,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var initialState = {
 	allPodcasts: null,
-	selected: null
+	selected: null,
+	trackList: null
 };
 
 exports.default = function () {
@@ -27170,7 +27182,14 @@ exports.default = function () {
 				}
 			}
 
+			updated.trackList = null;
 			updated.selected = action.payload;
+
+			return updated;
+
+		case _constants2.default.TRACKLIST_READY:
+
+			updated.trackList = action.payload;
 
 			return updated;
 
@@ -27191,6 +27210,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.searchPodcasts = searchPodcasts;
 exports.podcastSelected = podcastSelected;
+exports.trackListReady = trackListReady;
 exports.podcastsReceived = podcastsReceived;
 
 var _constants = __webpack_require__(244);
@@ -27231,6 +27251,13 @@ function podcastSelected(podcast) {
 	return {
 		type: _constants2.default.PODCAST_SELECTED,
 		payload: podcast
+	};
+}
+
+function trackListReady(list) {
+	return {
+		type: _constants2.default.TRACKLIST_READY,
+		payload: list
 	};
 }
 

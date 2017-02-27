@@ -10,7 +10,6 @@ class Playlist extends Component {
 		super();
 
 		this.state = {
-			trackList: null,
 			player: null
 		}
 	}
@@ -28,14 +27,25 @@ class Playlist extends Component {
 		// grab feed
 		const feedUrl = this.props.podcasts.selected.feedUrl;
 
-		console.log(feedUrl, "do we update all?")
-
 		if (feedUrl == null) {
 			return;
 		}
 
-		if (this.state.trackList != null) {
+		if (this.props.podcasts.trackList != null) {
+			if (this.state.player == null) {
+				this.initializePlayer(this.props.podcasts.trackList);
+			}
+
 			return;
+		}
+
+		// reset player
+		if (this.state.player != null) {
+			
+			this.state.player.pause();
+			this.setState({
+				player: null
+			})
 		}
 
 		APIManager
@@ -48,8 +58,6 @@ class Playlist extends Component {
 				let list = [];
 
 				item.forEach((track, i) => {
-					console.log(JSON.stringify(track), "track is")
-
 					let trackInfo = {};
 					let enclosure = track.enclosure[0]['$'];
 
@@ -61,10 +69,11 @@ class Playlist extends Component {
 					list.push(trackInfo);
 				});
 
-				// TODO: not updating list after second click
-				if (this.state.player == null) {
-					this.initializePlayer(list);
-				}
+				// send tracklist to reducer
+				
+				
+				this.props.trackListReady(list);
+
 				
 			})
 			.catch(err => {
@@ -121,7 +130,6 @@ class Playlist extends Component {
 		// });
 		
 		this.setState({
-			trackList: tracks,
 			player: ap1
 		})
 	}
@@ -142,7 +150,7 @@ class Playlist extends Component {
 	} 
 
 	render() {
-		console.log("WHAT IS OUR STATE", this.state.trackList);
+		console.log("WHAT IS OUR reducer state", this.props.podcasts.trackList);
 		return (
 			<div>
 		    	<div className="hero-header bg-pond animated fadeindown">
@@ -168,7 +176,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		podcastsReceived: (podcasts) => dispatch(actions.podcastsReceived(podcasts))
+		podcastsReceived: (podcasts) => dispatch(actions.podcastsReceived(podcasts)),
+		trackListReady: (list) => dispatch(actions.trackListReady(list))
 	}
 }
 
