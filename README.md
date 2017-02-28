@@ -4,6 +4,8 @@ Users can search through a large collection of podcasts powered by iTunes, creat
 
 [Try it here!](https://casts-bs.herokuapp.com/)
 
+Sometimes Heroku has a hiccup and it may affect this app. Check the their status if something is wrong by going here: https://status.heroku.com/
+
 ## Motivation
 
 * Parsing XML to JSON with React components to receive podcast information. 
