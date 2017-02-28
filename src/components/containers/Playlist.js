@@ -54,7 +54,7 @@ class Playlist extends Component {
 		APIManager
 			.get('/feed', {url: feedUrl})
 			.then(res => {
-				const podcast = res.podcast;
+
 				const selectedPodcast = this.props.podcasts.selected;
 				const item = podcast.item;
 
@@ -130,6 +130,14 @@ class Playlist extends Component {
 		const searchTerm = e.target.value;
 
 		this.props.podcastsReceived(searchTerm)
+			.then(res => {
+				let podcasts = res.response;
+
+				if (podcasts.length == 0) {
+					alert("No podcasts were found! Please try another search.")
+				}
+
+			})
 			.catch(err => {
 				alert("One moment while we catch our breathe!");
 			});
