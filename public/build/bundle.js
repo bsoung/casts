@@ -32173,7 +32173,7 @@ var Playlist = function (_Component) {
 			}
 
 			_utils.APIManager.get('/feed', { url: feedUrl }).then(function (res) {
-
+				var podcast = res.podcast;
 				var selectedPodcast = _this2.props.podcasts.selected;
 				var item = podcast.item;
 

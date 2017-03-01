@@ -54,7 +54,7 @@ class Playlist extends Component {
 		APIManager
 			.get('/feed', {url: feedUrl})
 			.then(res => {
-
+				const podcast = res.podcast;
 				const selectedPodcast = this.props.podcasts.selected;
 				const item = podcast.item;
 
