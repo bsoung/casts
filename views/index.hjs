@@ -18,17 +18,6 @@
 
   <body>
     <div id="root"></div>
-
-<!--     <script src="js/jquery-1.12.2.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/jquery.swipebox.min.js"></script>   
-    <script src="js/jquery.smoothState.min.js"></script> 
-    <script src="js/materialize.min.js"></script> 
-    <script src="js/swiper.min.js"></script>  
-    <script src="js/jquery.mixitup.min.js"></script>
-    <script src="js/masonry.min.js"></script>
-    <script src="js/chart.min.js"></script>
-    <script src="js/functions.js"></script> -->
     
     <script src="/build/vendor.min.js"></script>
     <script src="/build/bundle.js"></script>
