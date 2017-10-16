@@ -32563,168 +32563,171 @@ var Landing = function (_Component) {
 	}
 
 	_createClass(Landing, [{
-		key: 'render',
+		key: "render",
 		value: function render() {
 			return _react2.default.createElement(
-				'div',
-				{ id: 'main' },
+				"div",
+				{ id: "main" },
 				_react2.default.createElement(
-					'div',
-					{ id: 'content', className: 'main animated fadein' },
+					"div",
+					{ id: "content", className: "main animated fadein" },
 					_react2.default.createElement(
-						'div',
-						{ className: 'fullscreen autoflow bg-main' },
-						_react2.default.createElement('div', { className: 'opacity-overlay' }),
+						"div",
+						{ className: "fullscreen autoflow bg-main" },
+						_react2.default.createElement("div", { className: "opacity-overlay" }),
 						_react2.default.createElement(
-							'div',
-							{ className: 'clock center-align animated fadein delay-2', style: { zIndex: "999" } },
+							"div",
+							{
+								className: "clock center-align animated fadein delay-2",
+								style: { zIndex: "999" }
+							},
 							_react2.default.createElement(
-								'h2',
+								"h2",
 								null,
-								'Pod : ',
+								"Pod : ",
 								_react2.default.createElement(
-									'strong',
+									"strong",
 									null,
-									'Casts'
+									"Casts"
 								)
 							),
 							_react2.default.createElement(
-								'span',
+								"span",
 								null,
-								'Broaden horizons'
+								"Broaden horizons"
 							)
 						),
 						_react2.default.createElement(
-							'ul',
-							{ className: 'collection notify', style: { opacity: "0.8" } },
+							"ul",
+							{ className: "collection notify", style: { opacity: "0.8" } },
 							_react2.default.createElement(
-								'li',
-								{ className: 'collection-item white z-depth-1 dismissable animated fadeinup delay-2' },
+								"li",
+								{ className: "collection-item white z-depth-1 dismissable animated fadeinup delay-2" },
 								_react2.default.createElement(
-									'div',
-									{ className: 'notify-header' },
-									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/podre.jpg', alt: '' }),
+									"div",
+									{ className: "notify-header" },
+									_react2.default.createElement("img", { className: "avatar circle", src: "img/podre.jpg", alt: "" }),
 									_react2.default.createElement(
-										'div',
-										{ className: 'notify-author' },
+										"div",
+										{ className: "notify-author" },
 										_react2.default.createElement(
-											'span',
+											"span",
 											null,
-											'Podre the Pod Bot'
+											"Podre the Pod Bot"
 										),
 										_react2.default.createElement(
-											'span',
-											{ className: 'truncate' },
-											'Initializing a grande pod heist...'
+											"span",
+											{ className: "truncate" },
+											"Initializing a grande pod heist..."
 										),
 										_react2.default.createElement(
-											'span',
-											{ className: 'small' },
-											'sent from the Pod-trix'
+											"span",
+											{ className: "small" },
+											"sent from the Pod-trix"
 										)
 									)
 								)
 							),
 							_react2.default.createElement(
-								'li',
-								{ className: 'collection-item white z-depth-1 dismissable animated fadeinup delay-3' },
+								"li",
+								{ className: "collection-item white z-depth-1 dismissable animated fadeinup delay-3" },
 								_react2.default.createElement(
-									'div',
-									{ className: 'notify-header' },
-									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/casti.png', alt: '' }),
+									"div",
+									{ className: "notify-header" },
+									_react2.default.createElement("img", { className: "avatar circle", src: "img/casti.png", alt: "" }),
 									_react2.default.createElement(
-										'div',
-										{ className: 'notify-author' },
+										"div",
+										{ className: "notify-author" },
 										_react2.default.createElement(
-											'span',
+											"span",
 											null,
-											'Casti the Chosen Bot'
+											"Casti the Chosen Bot"
 										),
 										_react2.default.createElement(
-											'span',
-											{ className: 'truncate' },
-											'Fighting off hostile pod agents...'
+											"span",
+											{ className: "truncate" },
+											"Fighting off hostile pod agents..."
 										),
 										_react2.default.createElement(
-											'span',
-											{ className: 'small' },
-											'sent from the Pod-trix'
+											"span",
+											{ className: "small" },
+											"sent from the Pod-trix"
 										)
 									)
 								)
 							),
 							_react2.default.createElement(
-								'li',
-								{ className: 'collection-item white z-depth-1 dismissable animated fadeinup delay-4' },
+								"li",
+								{ className: "collection-item white z-depth-1 dismissable animated fadeinup delay-4" },
 								_react2.default.createElement(
-									'div',
-									{ className: 'notify-header' },
-									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/podre.jpg', alt: '' }),
+									"div",
+									{ className: "notify-header" },
+									_react2.default.createElement("img", { className: "avatar circle", src: "img/podre.jpg", alt: "" }),
 									_react2.default.createElement(
-										'div',
-										{ className: 'notify-author' },
+										"div",
+										{ className: "notify-author" },
 										_react2.default.createElement(
-											'span',
+											"span",
 											null,
-											'Podre the Pod Bot'
+											"Podre the Pod Bot"
 										),
 										_react2.default.createElement(
-											'span',
-											{ className: 'truncate' },
-											'Retrieving pod goods...'
+											"span",
+											{ className: "truncate" },
+											"Retrieving pod goods..."
 										),
 										_react2.default.createElement(
-											'span',
-											{ className: 'small' },
-											'sent from the Pod-trix'
+											"span",
+											{ className: "small" },
+											"sent from the Pod-trix"
 										)
 									)
 								)
 							),
 							_react2.default.createElement(
-								'li',
-								{ className: 'collection-item white z-depth-1 dismissable animated fadeinup delay-4' },
+								"li",
+								{ className: "collection-item white z-depth-1 dismissable animated fadeinup delay-4" },
 								_react2.default.createElement(
-									'div',
-									{ className: 'notify-header' },
-									_react2.default.createElement('img', { className: 'avatar circle', src: 'img/podre.jpg', alt: '' }),
+									"div",
+									{ className: "notify-header" },
+									_react2.default.createElement("img", { className: "avatar circle", src: "img/podre.jpg", alt: "" }),
 									_react2.default.createElement(
-										'div',
-										{ className: 'notify-author' },
+										"div",
+										{ className: "notify-author" },
 										_react2.default.createElement(
-											'span',
+											"span",
 											null,
-											'Podre the Pod Bot'
+											"Podre the Pod Bot"
 										),
 										_react2.default.createElement(
-											'span',
-											{ className: 'truncate' },
-											'Heist complete. ',
+											"span",
+											{ className: "truncate" },
+											"Heist complete. ",
 											_react2.default.createElement(
-												'strong',
+												"strong",
 												null,
-												'Press lock icon.'
+												"Press lock icon."
 											)
 										),
 										_react2.default.createElement(
-											'span',
-											{ className: 'small' },
-											'sent from the Pod-trix'
+											"span",
+											{ className: "small" },
+											"sent from the Pod-trix"
 										)
 									)
 								)
 							)
 						),
 						_react2.default.createElement(
-							'div',
-							{ className: 'animated bouncein delay-6' },
+							"div",
+							{ className: "animated bouncein delay-6" },
 							_react2.default.createElement(
-								'div',
-								{ className: 'unlock' },
+								"div",
+								{ className: "unlock", style: { border: "1px solid white" } },
 								_react2.default.createElement(
 									_reactRouter.Link,
-									{ to: '/feature', href: '#' },
-									_react2.default.createElement('i', { className: 'ion-android-lock' })
+									{ to: "/feature" },
+									"Open"
 								)
 							)
 						)

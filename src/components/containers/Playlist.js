@@ -148,10 +148,10 @@ class Playlist extends Component {
 		return (
 			<div>
 		    	<div className="hero-header bg-pond animated fadeindown">
-		        	<h1 className="hero-title">Casts</h1>
-		        </div>
+		        <h1 className="hero-title">Casts</h1>
+		      </div>
 
-		        <div className="p-20 animated fadeinup delay-1">
+		      <div className="p-20 animated fadeinup delay-1">
 					<div style={{background: "#fff"}} id="player1" className="aplayer"></div>
 				</div>
 

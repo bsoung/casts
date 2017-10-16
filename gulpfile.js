@@ -57,5 +57,3 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['css', 'copy', 'js', 'watch'], function() {});
 gulp.task('prod', ['css', 'copy', 'js'], function() {});
-
-
